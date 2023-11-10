@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CustomUserSerializer
+from .models import CustomUser
 
 
 # Create your views here.
@@ -23,7 +24,7 @@ def register(request):
             return redirect('home')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'OOPlanning/register.html', {'form': form})
 
 
 
